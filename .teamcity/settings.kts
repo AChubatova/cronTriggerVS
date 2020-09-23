@@ -42,7 +42,7 @@ object Buildconfig : BuildType({
 
     triggers {
         schedule {
-            id = "TRIGGER_1"
+            id = "TRIGGER_100"
             schedulingPolicy = cron {
                 seconds = "0"
                 minutes = "0"
