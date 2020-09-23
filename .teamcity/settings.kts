@@ -43,6 +43,8 @@ object Buildconfig : BuildType({
     triggers {
         schedule {
             schedulingPolicy = cron {
+                seconds = "2"
+                minutes = "1"
             }
             branchFilter = ""
             triggerBuild = always()
