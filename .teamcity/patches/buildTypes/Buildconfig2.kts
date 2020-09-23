@@ -2,6 +2,7 @@ package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.BuildType
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.schedule
 import jetbrains.buildServer.configs.kotlin.v2019_2.ui.*
 
 /*
@@ -12,5 +13,16 @@ in the root project, and delete the patch script.
 create(DslContext.projectId, BuildType({
     id("Buildconfig2")
     name = "buildconfig2"
+
+    triggers {
+        schedule {
+            schedulingPolicy = cron {
+                seconds = "2"
+                minutes = "1"
+            }
+            branchFilter = ""
+            triggerBuild = always()
+        }
+    }
 }))
 
